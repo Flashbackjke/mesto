@@ -5,3 +5,9 @@
   margin: 0 auto;
   padding: 45px 0px 40px;
 }
+
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 0;
+  }
+}

@@ -6,3 +6,15 @@
   padding-bottom: 50px;
   align-items: center;
 }
+
+@media screen and (max-width: 610px) {
+  .profile {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    padding-bottom: 35px;
+  }
+}

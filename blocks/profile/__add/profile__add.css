@@ -14,3 +14,11 @@
 .profile__add:hover {
   opacity: 0.7;
 }
+
+@media screen and (max-width: 610px) {
+  .profile__add {
+    margin: auto;
+    background-image: url(../../../images/add_button_610.svg);
+    width: 282px;
+  }
+}

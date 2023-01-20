@@ -6,3 +6,22 @@
   margin: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 720px) {
+  .profile__title {
+    font-size: 27px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .profile__title {
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__title {
+    margin-bottom: 10px;
+  }
+}

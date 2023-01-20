@@ -11,3 +11,15 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
+
+@media screen and (max-width: 900px) {
+  .page {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    max-width: 100%;
+  }
+}
