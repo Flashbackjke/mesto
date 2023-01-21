@@ -12,3 +12,12 @@
   margin-bottom: 37px;
   margin-top: 18px;
 }
+
+@media screen and (max-width: 425px) {
+  .popup__save {
+    width: 238px;
+    margin: 0 22px;
+    margin-top: 45px;
+    margin-bottom: 22px;
+  }
+}
