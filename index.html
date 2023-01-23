@@ -14,68 +14,66 @@
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип">
     </header>
-    <main>
-      <section class="content">
-        <div class="profile">
-          <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
-          <div class="profile__info">
-            <div class="profile__name">
-              <h2 class="profile__title">Жак-Ив Кусто</h2>
-              <button class="profile__edit"></button>
-            </div>
-            <p class="profile__subtitle">Исследователь океана</p>
+    <main class="content">
+      <section class="profile">
+        <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+        <div class="profile__info">
+          <div class="profile__name">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="profile__edit" type="button"></button>
           </div>
-          <button class="profile__add">
-          </button>
+          <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <div class="elements">
-          <div class="element">
-            <img class="element__img" src="./images/karachaevsk.jpg" alt="Карачаевск">
-            <div class="element__info">
-              <p class="element__title">Карачаевск</p>
-              <button class="element__like">
-              </button>
-            </div>
+        <button class="profile__add" type="button">
+        </button>
+      </section>
+      <section class="elements">
+        <div class="element">
+          <img class="element__img" src="./images/karachaevsk.jpg" alt="Карачаевск">
+          <div class="element__info">
+            <h2 class="element__title">Карачаевск</h2>
+            <button class="element__like" type="button">
+            </button>
           </div>
-          <div class="element">
-            <img class="element__img" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-            <div class="element__info">
-              <p class="element__title">Гора Эльбрус</p>
-              <button class="element__like">
-              </button>
-            </div>
+        </div>
+        <div class="element">
+          <img class="element__img" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+          <div class="element__info">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button class="element__like" type="button">
+            </button>
           </div>
-          <div class="element">
-            <img class="element__img" src="./images/dombay.jpg" alt="Домбай">
-            <div class="element__info">
-              <p class="element__title">Домбай</p>
-              <button class="element__like">
-              </button>
-            </div>
+        </div>
+        <div class="element">
+          <img class="element__img" src="./images/dombay.jpg" alt="Домбай">
+          <div class="element__info">
+            <h2 class="element__title">Домбай</h2>
+            <button class="element__like" type="button">
+            </button>
           </div>
-          <div class="element">
-            <img class="element__img" src="./images/altai.jpg" alt="Алтай">
-            <div class="element__info">
-              <p class="element__title">Алтай</p>
-              <button class="element__like">
-              </button>
-            </div>
+        </div>
+        <div class="element">
+          <img class="element__img" src="./images/altai.jpg" alt="Алтай">
+          <div class="element__info">
+            <h2 class="element__title">Алтай</h2>
+            <button class="element__like" type="button">
+            </button>
           </div>
-          <div class="element">
-            <img class="element__img" src="./images/baikal.jpg" alt="Байкал">
-            <div class="element__info">
-              <p class="element__title">Байкал</p>
-              <button class="element__like">
-              </button>
-            </div>
+        </div>
+        <div class="element">
+          <img class="element__img" src="./images/baikal.jpg" alt="Байкал">
+          <div class="element__info">
+            <h2 class="element__title">Байкал</h2>
+            <button class="element__like" type="button">
+            </button>
           </div>
-          <div class="element">
-            <img class="element__img" src="./images/norilsk.jpg" alt="Норильск">
-            <div class="element__info">
-              <p class="element__title">Норильск</p>
-              <button class="element__like">
-              </button>
-            </div>
+        </div>
+        <div class="element">
+          <img class="element__img" src="./images/norilsk.jpg" alt="Норильск">
+          <div class="element__info">
+            <h2 class="element__title">Норильск</h2>
+            <button class="element__like" type="button">
+            </button>
           </div>
         </div>
       </section>
@@ -87,9 +85,9 @@
   <div class="popup">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input class="popup__input popup__input_name" type="text" id="nameInput" name="nameInput">
-        <input class="popup__input popup__input_info" type="text" id="infoInput" name="infoInput">
+      <form class="popup__form" name="profile_editor">
+        <input class="popup__input popup__container-input_name" type="text" id="nameInput" name="nameInput">
+        <input class="popup__input popup__container-input_info" type="text" id="infoInput" name="infoInput">
         <button class="popup__save" type="submit">Сохранить</button>
       </form>
       <button class="popup__close" type="button"></button>
@@ -97,4 +95,5 @@
   </div>
   <script src="./scripts/index.js"></script>
 </body>
+
 </html>
