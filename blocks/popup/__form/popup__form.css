@@ -1,7 +1,7 @@
 .popup__form {
   align-self: center;
   margin: 0 auto;
-  margin-top: 54px;
+  margin-top: 40px;
 }
 
 @media screen and (max-width: 425px) {

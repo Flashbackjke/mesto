@@ -1,5 +1,5 @@
 let popup = document.querySelector('.popup');
-let nameInput = document.querySelector('.popup__input_name_first');
+let nameInput = document.querySelector('.popup__input_name_you');
 let infoInput = document.querySelector('.popup__input_info_about');
 let profileName = document.querySelector('.profile__title');
 let profileAbout = document.querySelector('.profile__subtitle');
