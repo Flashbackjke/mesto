@@ -20,7 +20,6 @@ closeProfile.addEventListener('click',closeEdit);
 save.addEventListener('submit',saveEdit);
 add.addEventListener('click',openPlace);
 closePlace.addEventListener('click',closePlaceForm);
-create.addEventListener('submit',createPlace);
 
 // Форма редактирования профиля
 function openEdit() {
@@ -49,11 +48,16 @@ function closePlaceForm() {
   popupPlace.classList.remove('popup_opened');
 }
 
-function createPlace(evt) {
+create.addEventListener( 'click', (evt) => {
   evt.preventDefault();
-  closePlaceForm();
-}
+  const name = placeInput.value;
 
+  const card = template.cloneNode(true);
+  card.querySelector('.element__title').textContent = name;
+
+  elements.prepend(card);
+  closePlaceForm()
+})
 
 const initialCards = [
   {
