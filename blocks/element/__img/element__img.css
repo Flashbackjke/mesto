@@ -1,6 +1,7 @@
 .element__img {
   background-size: cover;
   border-radius: 2% 2% 0 0;
-  max-width: 282px;
+  width: 282px;
+  height: 282px;
   margin: 0;
 }

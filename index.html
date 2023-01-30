@@ -28,71 +28,48 @@
         </button>
       </section>
       <section class="elements">
-        <div class="element">
-          <img class="element__img" src="./images/karachaevsk.jpg" alt="Карачаевск">
-          <div class="element__info">
-            <h2 class="element__title">Карачаевск</h2>
-            <button class="element__like" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__img" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-          <div class="element__info">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__like" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__img" src="./images/dombay.jpg" alt="Домбай">
-          <div class="element__info">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__like" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__img" src="./images/altai.jpg" alt="Алтай">
-          <div class="element__info">
-            <h2 class="element__title">Алтай</h2>
-            <button class="element__like" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__img" src="./images/baikal.jpg" alt="Байкал">
-          <div class="element__info">
-            <h2 class="element__title">Байкал</h2>
-            <button class="element__like" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__img" src="./images/norilsk.jpg" alt="Норильск">
-          <div class="element__info">
-            <h2 class="element__title">Норильск</h2>
-            <button class="element__like" type="button">
-            </button>
-          </div>
-        </div>
+
       </section>
     </main>
     <footer class="footer">
       <p class="footer__text">&copy; 2023 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
-    <div class="popup__container">
+  <div class="popup popup_profile">
+    <div class="popup__container popup__container-profile">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="profile_editor">
+      <form class="popup__form popup__form-profile" name="popup__form-profile">
         <input class="popup__input popup__input_name_you" type="text" id="nameInput" name="nameInput">
         <input class="popup__input popup__input_info_about" type="text" id="infoInput" name="infoInput">
-        <button class="popup__save" type="submit">Сохранить</button>
+        <button class="popup__button popup__button-save" type="submit">Сохранить</button>
       </form>
-      <button class="popup__close" type="button"></button>
+      <button class="popup__close popup__close-profile" type="button"></button>
     </div>
   </div>
+  <div class="popup popup_place">
+    <div class="popup__container popup__container-place">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form popup__form-place" name="popup__form-place">
+        <input class="popup__input popup__input_name_place" type="text" id="placeInput" name="placeInput"
+          placeholder="Название">
+        <input class="popup__input popup__input_img_link" type="text" id="imgInput" name="imgInput"
+          placeholder="Ссылка на картинку">
+        <button class="popup__button popup__button-create" type="submit">Создать</button>
+      </form>
+      <button class="popup__close popup__close-place" type="button"></button>
+    </div>
+  </div>
+  <template id="element_template">
+    <div class="element">
+      <button class="element__delete" type="button"></button>
+      <img class="element__img" src="" alt="">
+      <div class="element__info">
+        <h2 class="element__title"></h2>
+        <button class="element__like" type="button">
+        </button>
+      </div>
+    </div>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 
