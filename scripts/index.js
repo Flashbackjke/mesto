@@ -15,11 +15,11 @@ const linkInput = document.querySelector('.popup__input_img_link');
 const create = document.querySelector('.popup__button-create');
 
 
-edit.addEventListener('click',openEdit);
-closeProfile.addEventListener('click',closeEdit);
-save.addEventListener('submit',saveEdit);
-add.addEventListener('click',openPlace);
-closePlace.addEventListener('click',closePlaceForm);
+edit.addEventListener('click', openEdit);
+closeProfile.addEventListener('click', closeEdit);
+save.addEventListener('submit', saveEdit);
+add.addEventListener('click', openPlace);
+closePlace.addEventListener('click', closePlaceForm);
 
 // Форма редактирования профиля
 function openEdit() {
@@ -47,17 +47,6 @@ function openPlace() {
 function closePlaceForm() {
   popupPlace.classList.remove('popup_opened');
 }
-
-create.addEventListener( 'click', (evt) => {
-  evt.preventDefault();
-  const name = placeInput.value;
-
-  const card = template.cloneNode(true);
-  card.querySelector('.element__title').textContent = name;
-
-  elements.prepend(card);
-  closePlaceForm()
-})
 
 const initialCards = [
   {
@@ -90,12 +79,40 @@ const template = document.querySelector("#element_template").content.querySelect
 const elements = document.querySelector('.elements'); // Сюда копируем карточки
 
 function renderCards() {
+  const card = template.cloneNode(true);
   initialCards.forEach((item) => {
     const card = template.cloneNode(true);
     card.querySelector('.element__title').textContent = item.name;
     card.querySelector('.element__img').src = item.link;
+    card.querySelector('.element__img').alt = item.name;
     elements.prepend(card);
+    card.querySelector('.element__delete').addEventListener('click', ()=> {
+      card.remove();
+    });
+    const like = card.querySelector('.element__like');
+    like.addEventListener('click', function (evt) {
+      evt.target.classList.toggle('element__like_active');
+    });
   });
-}
+  create.addEventListener('click', (evt) => {
+    const card = template.cloneNode(true);
+    evt.preventDefault();
+    const name = placeInput.value;
+    const img = linkInput.value;
+    card.querySelector('.element__title').textContent = name;
+    card.querySelector('.element__img').src = img;
+    card.querySelector('.element__img').alt = name;
+    elements.prepend(card);
+    closePlaceForm()
+    card.querySelector('.element__delete').addEventListener('click', ()=> {
+      card.remove();
+    });
+    const like = card.querySelector('.element__like');
+    like.addEventListener('click', function (evt) {
+      evt.target.classList.toggle('element__like_active');
+    });
+  });
+
+};
 
 renderCards();
