@@ -1,0 +1,12 @@
+.element__img-batton {
+  width: 282px;
+  height: 282px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.element__img-batton:hover {
+  cursor: pointer;
+}

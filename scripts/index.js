@@ -6,13 +6,16 @@ const profileAbout = document.querySelector('.profile__subtitle');
 const edit = document.querySelector('.profile__edit');
 const closeProfile = document.querySelector('.popup__close-profile');
 const save = document.querySelector('.popup__form-profile');
-
 const popupPlace = document.querySelector('.popup_place');
 const closePlace = document.querySelector('.popup__close-place');
 const add = document.querySelector('.profile__add');
 const placeInput = document.querySelector('.popup__input_name_place');
 const linkInput = document.querySelector('.popup__input_img_link');
 const create = document.querySelector('.popup__button-create');
+const closeImage = document.querySelector('.popup__close-image');
+const popupImage = document.querySelector('.popup_image');
+const image = document.querySelector('.element__img');
+const imageBatton = document.querySelector('element__img-batton');
 
 
 edit.addEventListener('click', openEdit);
@@ -20,6 +23,12 @@ closeProfile.addEventListener('click', closeEdit);
 save.addEventListener('submit', saveEdit);
 add.addEventListener('click', openPlace);
 closePlace.addEventListener('click', closePlaceForm);
+closeImage.addEventListener('click', closeImg);
+
+
+function closeImg() {
+  popupImage.classList.remove('popup_opened');
+}
 
 // Форма редактирования профиля
 function openEdit() {
@@ -112,7 +121,12 @@ function renderCards() {
       evt.target.classList.toggle('element__like_active');
     });
   });
-
 };
 
 renderCards();
+
+imageBatton.addEventListener('click', openImage);
+
+function openImage() {
+  popupImage.classList.add('popup_opened');
+}
