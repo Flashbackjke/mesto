@@ -15,7 +15,7 @@ const create = document.querySelector('.popup__button-create');
 const closeImage = document.querySelector('.popup__close-image');
 const popupImage = document.querySelector('.popup_image');
 const image = document.querySelector('.element__img');
-const imageBatton = document.querySelector('element__img-batton');
+const imageBatton = document.querySelector('.element__img-batton');
 
 
 edit.addEventListener('click', openEdit);
