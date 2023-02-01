@@ -120,12 +120,13 @@ function renderCards() {
     like.addEventListener('click', function (evt) {
       evt.target.classList.toggle('element__like_active');
     });
+    imageBatton.addEventListener('click', openImage);
   });
 };
 
 renderCards();
 
-imageBatton.addEventListener('click', openImage);
+
 
 function openImage() {
   popupImage.classList.add('popup_opened');
