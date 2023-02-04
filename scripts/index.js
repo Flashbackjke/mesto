@@ -120,7 +120,6 @@ function createCard() {
       imageBig.alt = card.querySelector('.element__title').textContent;
       imageTitle.textContent = card.querySelector('.element__title').textContent;
     });
-    return card;
   });
   renderCard();
 };
