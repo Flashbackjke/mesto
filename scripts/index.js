@@ -64,6 +64,8 @@ function saveEditForm(evt) {
 // Форма добавления карточек
 function openPlaceForm() {
   openPopup(cardPopup);
+  placeInput.value = '';
+  linkInput.value = '';
 }
 
 function closePlaceForm() {
@@ -136,7 +138,7 @@ function renderCard() {
     card.querySelector('.element__img').src = img;
     card.querySelector('.element__img').alt = name;
     elements.prepend(card);
-    closePlaceForm()
+    closePlaceForm();
     card.querySelector('.element__delete').addEventListener('click', ()=>{
       card.remove();
     });
