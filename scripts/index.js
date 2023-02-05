@@ -102,7 +102,51 @@ const initialCards = [
 const template = document.querySelector("#element_template").content.querySelector(".element"); // Темплейт
 const elements = document.querySelector('.elements'); // Сюда копируем карточки
 
+createCard();
+
 function createCard() {
+  initialCards.forEach((item) => {
+    const card = renderCard(item);
+    elements.prepend(card);
+  });
+
+}
+
+function renderCard(item) {
+
+    const card = template.cloneNode(true);
+    card.querySelector('.element__title').textContent = item.name;
+    card.querySelector('.element__img').src = item.link;
+    card.querySelector('.element__img').alt = item.name;
+
+    card.querySelector('.element__delete').addEventListener('click', ()=>{
+      card.remove();
+    });
+    const like = card.querySelector('.element__like');
+    like.addEventListener('click', function (evt) {
+      evt.target.classList.toggle('element__like_active');
+    });
+    card.querySelector('.element__img-batton').addEventListener('click', ()=>{
+      openImageForm();
+      imageBig.src = card.querySelector('.element__img').src;
+      imageBig.alt = card.querySelector('.element__title').textContent;
+      imageTitle.textContent = card.querySelector('.element__title').textContent;
+    });
+    return card;
+};
+
+buttonCreateCard.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  const name = placeInput.value;
+  const link = linkInput.value;
+  const card = renderCard({name:name, link:link})
+  elements.prepend(card);
+  closePlaceForm();
+});
+
+
+// Оставил код для собственного понимания, как по разному можно выполнить задачу, но ка делать не стоит.
+/*function createCard() {
   initialCards.forEach((item) => {
     const card = template.cloneNode(true);
     card.querySelector('.element__title').textContent = item.name;
@@ -153,4 +197,4 @@ function renderCard() {
       imageTitle.textContent = card.querySelector('.element__title').textContent;
     });
   });
-}
+}*/
