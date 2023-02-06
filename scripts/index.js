@@ -8,12 +8,12 @@ const profileName = document.querySelector('.profile__title');
 const profileAbout = document.querySelector('.profile__subtitle');
 const battonEdit = document.querySelector('.profile__edit');
 const closeProfile = document.querySelector('.popup__close-profile');
-const buttonSave = document.querySelector('.popup__form-profile');
+const formSave = document.querySelector('.popup__form-profile');
 const closePlace = document.querySelector('.popup__close-place');
 const buttonAddCard = document.querySelector('.profile__add');
 const placeInput = document.querySelector('.popup__input_name_place');
 const linkInput = document.querySelector('.popup__input_img_link');
-const buttonCreateCard = document.querySelector('.popup__button-create');
+const formCreateCard = document.querySelector('.popup__form-place');
 const closeImage = document.querySelector('.popup__close-image');
 const image = document.querySelector('.element__img');
 const imageBig = imagePopup.querySelector('.popup__fullimg');
@@ -21,7 +21,7 @@ const imageTitle = imagePopup.querySelector('.popup__subtitle');
 
 battonEdit.addEventListener('click', openEditForm);
 closeProfile.addEventListener('click', closeEditForm);
-buttonSave.addEventListener('submit', saveEditForm);
+formSave.addEventListener('submit', saveEditForm);
 buttonAddCard.addEventListener('click', openPlaceForm);
 closePlace.addEventListener('click', closePlaceForm);
 closeImage.addEventListener('click', closeImageForm);
@@ -135,7 +135,7 @@ function renderCard(item) {
     return card;
 };
 
-buttonCreateCard.addEventListener('click', (evt) => {
+formCreateCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const name = placeInput.value;
   const link = linkInput.value;
