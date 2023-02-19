@@ -8,7 +8,7 @@ const profileName = document.querySelector('.profile__title');
 const profileAbout = document.querySelector('.profile__subtitle');
 const battonEdit = document.querySelector('.profile__edit');
 const closeProfile = document.querySelector('.popup__close-profile');
-const formSave = document.querySelector('.popup__form-profile');
+const formSaveProfile = document.querySelector('.popup__form-profile');
 const closePlace = document.querySelector('.popup__close-place');
 const buttonAddCard = document.querySelector('.profile__add');
 const placeInput = document.querySelector('.popup__input_name_place');
@@ -21,18 +21,11 @@ const imageTitle = imagePopup.querySelector('.popup__subtitle');
 
 battonEdit.addEventListener('click', openEditForm);
 closeProfile.addEventListener('click', closeEditForm);
-formSave.addEventListener('submit', saveEditForm);
+formSaveProfile.addEventListener('submit', saveEditForm);
 buttonAddCard.addEventListener('click', openPlaceForm);
 closePlace.addEventListener('click', closePlaceForm);
 closeImage.addEventListener('click', closeImageForm);
 
-function openPopup (popup) {
-  popup.classList.add('popup_opened');
-}
-
-function closePopup (popup) {
-  popup.classList.remove('popup_opened');
-  }
 
 // Форма открытия картинки
 function openImageForm() {
@@ -72,32 +65,41 @@ function closePlaceForm() {
   closePopup(cardPopup);
 }
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+function keyHandlerEsc(evt) {
+  if (evt.key === "Escape") {
+    const formOpen=document.querySelector(".popup_opened")
+    closePopup(formOpen);
   }
-];
+}
+
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  document.addEventListener("keydown", keyHandlerEsc);
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener("keydown", keyHandlerEsc);
+}
+
+profilePopup.addEventListener("click", (e) => {
+  if(e.target===profilePopup || e.target===closeProfile){
+    closePopup(profilePopup);
+  }
+});
+
+cardPopup.addEventListener("click", (e) => {
+  if(e.target===cardPopup || e.target===closePlace){
+    closePopup(cardPopup);
+  }
+});
+
+imagePopup.addEventListener("click", (e) => {
+  if(e.target===imagePopup || e.target===closeImage){
+    closePopup(imagePopup);
+  }
+});
+
 
 const template = document.querySelector("#element_template").content.querySelector(".element"); // Темплейт
 const elements = document.querySelector('.elements'); // Сюда копируем карточки
